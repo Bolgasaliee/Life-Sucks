@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/prev_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollPrev"
+            android:text="prev" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/cal_date"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/border_circular_fill_grey"
+            android:gravity="center"
+            android:text="6월"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/next_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollNext"
+            android:text="next" />
+
+    </LinearLayout>
+
+    <com.github.sundeepk.compactcalendarview.CompactCalendarView
+        android:id="@+id/calendar"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:compactCalendarBackgroundColor="#00ffffff"
+        app:compactCalendarCurrentDayBackgroundColor="#50C878"
+        app:compactCalendarCurrentSelectedDayBackgroundColor="#e3e3e3"
+        app:compactCalendarDisplayOtherMonthDays="true"
+        app:compactCalendarMultiEventIndicatorColor="#fff"
+        app:compactCalendarOtherMonthDaysTextColor="#e3e3e3"
+        app:compactCalendarTextColor="#000000"
+        app:compactCalendarTextSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <ImageButton
+        android:id="@+id/settings_ibt"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginLeft="41dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/transparent"
+        android:onClick="ToSettings"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/page_lay"
+        app:srcCompat="@drawable/settings" />
+
+    <LinearLayout
+        android:id="@+id/page_lay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/pg1_bt"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:onClick="ToPg1"
+            android:text="1"
+            android:textSize="20sp" />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/pg2_bt"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:onClick="ToPg2"
+            android:text="2"
+            android:textSize="20sp" />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/pg3_bt"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:onClick="ToPg3"
+            android:text="3"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/help_ibt"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginRight="42dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/transparent"
+        android:onClick="ToHelp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/page_lay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/help" />
+
+    <Button
+        android:id="@+id/sch_management"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="PopupManageSchedule"
+        android:text="일정 관리"
+        app:layout_constraintEnd_toStartOf="@+id/load_saved"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendar" />
+
+    <Button
+        android:id="@+id/load_saved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="PopupManageRecord"
+        android:text="기록 확인"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendar" />
+
+    <Button
+        android:id="@+id/sch_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="PopupAddSchedule"
+        android:text="일정 추가"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.418"
+        app:layout_constraintStart_toEndOf="@+id/load_saved"
+        app:layout_constraintTop_toBottomOf="@+id/calendar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/push_lay"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/push"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:text="야간 푸쉬 알림"
+            android:textSize="24sp" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Switch
+            android:id="@+id/push_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:switchMinWidth="50dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/toolbar_lay"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/push_lay">
+
+        <TextView
+            android:id="@+id/toolbar"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:text="작업 표시줄 카운트다운"
+            android:textSize="24sp" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Switch
+            android:id="@+id/toolbar_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:switchMinWidth="50dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/editable_lay"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_lay">
+
+        <TextView
+            android:id="@+id/editable"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:text="기록 수정"
+            android:textSize="24sp" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Switch
+            android:id="@+id/editable_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:switchMinWidth="50dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
