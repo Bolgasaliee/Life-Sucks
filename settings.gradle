@@ -1,0 +1,2 @@
+rootProject.name='SetSatLife'
+include ':app'
